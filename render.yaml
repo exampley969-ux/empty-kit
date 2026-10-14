@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: vision-radar
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: VISION_RADAR_JWT_SECRET
+        generateValue: true          # long random value, kept stable across restarts
+      - key: VISION_RADAR_ADMIN_USERNAME
+        value: admin
+      - key: VISION_RADAR_ADMIN_PASSWORD
+        sync: false                  # you type it in the Render dashboard (not stored in git)
+      - key: VISION_RADAR_DATABASE_URL
+        sync: false                  # Supabase *Session pooler* string, typed in the Render dashboard
+      - key: VISION_RADAR_TOKEN_TTL_SECONDS
+        value: "3600"

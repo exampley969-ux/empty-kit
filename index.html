@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vision Radar</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app"></div>
+<script>
+  // The backend base URL. Defaults to same-origin-relative so this file can
+  // be served by any static file server sitting next to the API; override
+  // via ?api=http://host:port for dev when frontend/backend run on
+  // different ports (CORS is wide-open in dev_http_server for exactly this).
+  window.VISION_RADAR_API = new URLSearchParams(location.search).get("api") || "";
+</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
