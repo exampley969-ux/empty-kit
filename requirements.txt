@@ -1,0 +1,17 @@
+# --- core runtime ---
+opencv-python>=4.8
+numpy>=1.24
+onnxruntime>=1.16
+scipy>=1.10            # Hungarian assignment in the tracker
+PyJWT>=2.6             # login tokens
+psutil>=5.9            # CPU / memory monitoring
+
+# --- HTTP API (only needed to serve the API; the service layer works without it) ---
+fastapi>=0.100
+uvicorn>=0.23
+
+# --- only needed to run tests/test_fastapi_app.py ---
+httpx>=0.24
+
+# --- Supabase / PostgreSQL backend (only imported when VISION_RADAR_DATABASE_URL is set) ---
+psycopg[binary]>=3.1
